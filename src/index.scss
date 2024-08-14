@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  list-style: none;
+  text-decoration: none !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(237, 237, 237, 0.3725490196);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5c5c5c;
+  border-radius: 8px;
+}
