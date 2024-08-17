@@ -20,7 +20,7 @@ export const getAllTodos = async () => {
 
 export const updateTodo = async (
   id: string,
-  todo: { title: string; completed: boolean }
+  todo: { text: string; time: string }
 ) => {
   const response = await todoApiClient.put(`/todo/update/${id}`, todo);
 

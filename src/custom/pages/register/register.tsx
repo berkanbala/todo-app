@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import styles from "./register.module.scss";
-import { toast } from "react-toastify";
-import { register } from "../../../common/services/user";
 import { useNavigate } from "react-router-dom";
+import { register } from "../../../common/services/user";
+import { Button } from "../../../common/components/layout/ui/button/button";
+import { toast } from "react-toastify";
+import { Input } from "../../../common/components/layout/ui/input/input";
+import styles from "./register.module.scss";
 
 export const Register = () => {
   const [username, setUsername] = useState("");
@@ -10,6 +12,12 @@ export const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  if (window.localStorage.getItem("accessToken")) {
+    window.location.href = "/";
+
+    return;
+  }
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -41,39 +49,33 @@ export const Register = () => {
     navigate("/login");
   };
 
-  if (window.localStorage.getItem("accessToken")) {
-    navigate("/");
-
-    return;
-  }
-
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         <form onSubmit={handleSubmit}>
-          <div className={styles.title}>Kayıt Ol</div>
-          <input
+          <div className={styles.title}>Sign up</div>
+          <Input
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="Kullanıcı Adı"
+            placeholder="User Name"
             disabled={loading}
           />
-          <input
+          <Input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Şifre"
+            placeholder="Password"
             disabled={loading}
           />
-          <input
+          <Input
             type="password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            placeholder="Şifreyi Onayla"
+            placeholder="Confirm Password"
             disabled={loading}
           />
-          <button type="submit">Kayıt Ol</button>
+          <Button type="submit" text="Register" disabled={loading} />
         </form>
         <div className={styles.login}>
           <span>You haven an account? </span>

@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AppContextProvider } from "./common/context/authContext";
-import { Login } from "./custom/pages/login/login";
-import { Register } from "./custom/pages/register/register";
 import { ToastContainer } from "react-toastify";
 import { TodosCreate } from "./custom/pages/todosCreate/todosCreate";
 import { TodosUpdate } from "./custom/pages/todosUpdate/todosUpdate";
+import { Register } from "./custom/pages/register/register";
+import { Login } from "./custom/pages/login/login";
 import { Todos } from "./custom/pages/todos/todos";
 
 export const App = () => {

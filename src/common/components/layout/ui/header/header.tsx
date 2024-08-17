@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./header.module.scss";
+import { Button } from "../button/button";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ export const Header = () => {
   return (
     <div className={styles.container}>
       <span>Hello Test</span>
-      <button onClick={logout}>Çıkış Yap</button>
+      <Button onClick={logout} text="Logout" />
     </div>
   );
 };

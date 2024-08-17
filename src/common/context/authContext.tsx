@@ -1,5 +1,5 @@
-import { IUser } from "../models/user";
 import { createContext, useContext, useState } from "react";
+import { IUser } from "../models/user";
 
 const AppContext = createContext<IAppContext>({} as any);
 export const useAppContext = () => useContext(AppContext);

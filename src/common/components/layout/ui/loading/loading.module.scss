@@ -1,0 +1,37 @@
+.container {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+
+  .loading {
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+
+    &::before {
+      position: absolute;
+      animation: spin 0.8s linear infinite;
+      -webkit-animation: 0.8s spin linear infinite;
+      background-image: url("../../../../../assets/icons/loading.svg");
+      background-size: contain;
+      content: "";
+      height: 100%;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
